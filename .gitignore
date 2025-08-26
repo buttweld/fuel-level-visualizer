@@ -10,6 +10,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Output directory
+output/
+
 # Distribution / packaging
 *.egg-info/
 build/

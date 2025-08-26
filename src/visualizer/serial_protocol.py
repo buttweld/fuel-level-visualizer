@@ -103,10 +103,10 @@ class SerialProtocol:
 
     @staticmethod
     def _generate_random_samples(n_samples: int) -> np.ndarray:
-        start_ts = np.random.randint(0, 3600 - n_samples)
+        start_time_stamp = np.random.randint(0, 3600 - n_samples)
         dtype = [("TimeStamp", ">u2"), ("FuelLevel", ">u2")]
         samples = np.zeros(n_samples, dtype=dtype)
-        samples["TimeStamp"] = np.arange(start_ts, start_ts + n_samples, dtype=np.uint16)
-        samples["FuelLevel"] = np.random.randint(0, 101, size=n_samples, dtype=np.uint16)
+        samples["TimeStamp"] = np.arange(start_time_stamp, start_time_stamp + n_samples, dtype=np.uint16)
+        samples["FuelLevel"] = np.random.randint(0, 2**15, size=n_samples, dtype=np.uint16)
         return samples
 
